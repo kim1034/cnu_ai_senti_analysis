@@ -14,4 +14,9 @@ doc = BeautifulSoup(result.text, 'html.parser')
 
 
 title = doc.select('h4.title')[0].get_text()
-print(title)
+# strip (): 앞뒤 공백을 없애줌
+# get_text(): 태그를 제거하고 text만 추출
+# - 회원가입
+content = doc.select('#newsEndContents')[0].get_text().strip()
+print(f'본문: {title}' )  # fstring
+print('내용: {}'.format(content))
