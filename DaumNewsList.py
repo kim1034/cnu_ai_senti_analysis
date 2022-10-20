@@ -1,10 +1,10 @@
-import pprint
 import requests
 from bs4 import BeautifulSoup
+from collector.practice.CollectorService import get_daum_news
 
 url ='https://news.daum.net/breakingnews/digital'
 result = requests.get(url, verify=False)
-from collector.CollectorService import get_daum_news
+
 doc = BeautifulSoup(result.text, 'html.parser')
 
 # <a href='url'> :a태그는 클릭했을 때 해당 url로 이동
